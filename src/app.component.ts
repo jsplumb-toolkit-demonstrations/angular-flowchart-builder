@@ -5,6 +5,59 @@ import {DatasetComponent } from "./dataset";
 import { Dialogs, jsPlumbToolkit, jsPlumb, jsPlumbUtil  } from "jsplumbtoolkit";
 import { jsPlumbService } from "jsplumbtoolkit-angular";
 
+const nodes = 150
+
+export function generate() {
+  let x = 0, y = 0, idx = 0
+  let data = {
+    nodes:[],
+    edges:[]
+  }
+
+  for (idx = 0; idx < nodes; idx++) {
+    let id = "" + idx
+    data.nodes.push({
+      id,
+      left:x,
+      top:y,
+      type:"action",
+      w:80,
+      h:80
+    })
+
+    x += 100
+    y += 100
+
+    let target = idx < nodes - 1 ? ("" + (idx + 1)) : ("" + (idx - 1))
+
+    data.edges.push({
+      source:id,
+      target
+    })
+
+    let rnd = idx
+    while(rnd === idx) {
+      rnd = parseInt("" + (Math.random() * nodes), 10)
+    }
+    data.edges.push({
+      source:id,
+      target:"" + rnd
+    })
+
+    rnd = idx
+    while(rnd === idx) {
+      rnd = parseInt("" + (Math.random() * nodes), 10)
+    }
+    data.edges.push({
+      source:"" + rnd,
+      target:id
+    })
+  }
+
+  return data
+
+}
+
 @Component({
     selector: 'jsplumb-demo',
     template:`       
@@ -31,8 +84,14 @@ export class AppComponent {
     this.toolkit = this.$jsplumb.getToolkit(this.toolkitId, this.toolkitParams)
   }
 
+
+
   ngAfterViewInit() {
-    this.toolkit.load({ url:"data/copyright.json" });
+    //this.toolkit.load({ url:"data/copyright.json" });
+    const data = generate()
+    console.log(data)
+    console.time("load")
+    this.toolkit.load({ data, onload:() => console.timeEnd("load") });
   }
 
   toolkitParams = {
