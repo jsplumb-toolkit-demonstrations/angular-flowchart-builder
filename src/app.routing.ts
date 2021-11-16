@@ -8,4 +8,4 @@ export const AppRoutes: Routes = [
   { path: 'data', component: DatasetComponent }
 ];
 
-export const ROUTING = RouterModule.forRoot(AppRoutes, {useHash: true});
+export const ROUTING = RouterModule.forRoot(AppRoutes, { useHash: true, relativeLinkResolution: 'legacy' });
