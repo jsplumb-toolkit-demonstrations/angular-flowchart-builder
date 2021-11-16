@@ -6,7 +6,7 @@
 @import "../node_modules/jsplumbtoolkit-editable-connectors/dist/css/jsplumbtoolkit-editable-connectors.css";
 
 /* import the styles from the non-angular flowchart demo */
-@import "../../flowchart-builder/app.css";
+@import "../app.css";
 
 
 .jtk-surface {
