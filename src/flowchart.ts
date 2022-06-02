@@ -21,7 +21,7 @@ import {Edge, Vertex} from '@jsplumbtoolkit/core'
 
 import {EdgePathEditor} from '@jsplumbtoolkit/connector-editors'
 
-import {SpringLayout} from '@jsplumbtoolkit/layout-spring'
+import {ForceDirectedLayout} from '@jsplumbtoolkit/layout-force-directed'
 import {LassoPlugin} from '@jsplumbtoolkit/browser-ui-plugin-lasso'
 import {DrawingToolsPlugin} from '@jsplumbtoolkit/browser-ui-plugin-drawing-tools'
 
@@ -189,7 +189,7 @@ export class FlowchartComponent implements AfterViewInit {
 
   renderParams = {
     layout: {
-      type: SpringLayout.type
+      type: ForceDirectedLayout.type
     },
     events: {
       [EVENT_CANVAS_CLICK]: (params: any) => {
