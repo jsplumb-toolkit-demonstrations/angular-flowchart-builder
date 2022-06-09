@@ -9,11 +9,10 @@ import { FlowchartComponent } from './flowchart'
 import { ActionNodeComponent, QuestionNodeComponent, OutputNodeComponent, StartNodeComponent } from './components'
 
 @NgModule({
-    imports: [ BrowserModule, jsPlumbToolkitModule, jsPlumbToolkitDragDropModule],
-    declarations: [ AppComponent, QuestionNodeComponent, ActionNodeComponent, StartNodeComponent, OutputNodeComponent, FlowchartComponent, ControlsComponent ],
-    bootstrap: [ AppComponent ],
-    entryComponents: [ QuestionNodeComponent, ActionNodeComponent, StartNodeComponent, OutputNodeComponent ],
-    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+    imports: [BrowserModule, jsPlumbToolkitModule, jsPlumbToolkitDragDropModule],
+    declarations: [AppComponent, QuestionNodeComponent, ActionNodeComponent, StartNodeComponent, OutputNodeComponent, FlowchartComponent, ControlsComponent],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
 
