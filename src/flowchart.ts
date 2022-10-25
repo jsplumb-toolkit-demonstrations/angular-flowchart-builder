@@ -29,6 +29,7 @@ import { OrthogonalConnector } from '@jsplumbtoolkit/connector-orthogonal'
 import * as OrthogonalConnectorEditor from '@jsplumbtoolkit/connector-editors-orthogonal'
 
 import {FlowchartService} from './app/flowchart.service'
+import {BackgroundPlugin, GeneratedGridBackground, GridTypes} from '@jsplumbtoolkit/browser-ui-plugin-background'
 
 // initialize the orthogonal connector editor. This registers it on the Surface.
 OrthogonalConnectorEditor.initialize()
@@ -203,7 +204,17 @@ export class FlowchartComponent implements AfterViewInit {
     zoomToFit: true,
     plugins: [
       LassoPlugin.type,
-      DrawingToolsPlugin.type
+      DrawingToolsPlugin.type,
+      {
+        type: BackgroundPlugin.type,
+        options: {
+          minWidth: 5000,
+          minHeight: 5000,
+          type: GeneratedGridBackground.type,
+          gridType: GridTypes.dotted,
+          showTickMarks: false
+        }
+      }
     ],
     grid: {
       size: {
