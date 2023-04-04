@@ -5,6 +5,15 @@ import { jsPlumbSurfaceComponent, AngularViewOptions, BrowserUIAngular } from '@
 import { ActionNodeComponent, QuestionNodeComponent, OutputNodeComponent, StartNodeComponent } from './components'
 
 import {
+  Edge, Vertex,
+  EdgePathEditor,
+  ForceDirectedLayout,
+  LassoPlugin,
+  DrawingToolsPlugin,
+  OrthogonalConnector,
+  BackgroundPlugin,
+  GeneratedGridBackground,
+  GridTypes,
   Surface,
   EVENT_CANVAS_CLICK,
   EVENT_CLICK,
@@ -16,23 +25,7 @@ import {
   AnchorLocations
 } from '@jsplumbtoolkit/browser-ui'
 
-
-import {Edge, Vertex} from '@jsplumbtoolkit/core'
-
-import {EdgePathEditor} from '@jsplumbtoolkit/connector-editors'
-
-import {ForceDirectedLayout} from '@jsplumbtoolkit/layout-force-directed'
-import {LassoPlugin} from '@jsplumbtoolkit/browser-ui-plugin-lasso'
-import {DrawingToolsPlugin} from '@jsplumbtoolkit/browser-ui-plugin-drawing-tools'
-
-import { OrthogonalConnector } from '@jsplumbtoolkit/connector-orthogonal'
-import * as OrthogonalConnectorEditor from '@jsplumbtoolkit/connector-editors-orthogonal'
-
 import {FlowchartService} from './app/flowchart.service'
-import {BackgroundPlugin, GeneratedGridBackground, GridTypes} from '@jsplumbtoolkit/browser-ui-plugin-background'
-
-// initialize the orthogonal connector editor. This registers it on the Surface.
-OrthogonalConnectorEditor.initialize()
 
 const TARGET = 'target'
 const SOURCE = 'source'

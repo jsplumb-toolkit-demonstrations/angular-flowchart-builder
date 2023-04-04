@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {newInstance as newDialogInstance, Dialogs} from '@jsplumbtoolkit/dialogs'
+import {Dialogs} from '@jsplumbtoolkit/browser-ui'
 import {jsPlumbService, BrowserUIAngular} from '@jsplumbtoolkit/browser-ui-angular'
 
 @Injectable({
@@ -12,22 +12,22 @@ export class FlowchartService {
   private _toolkit: BrowserUIAngular
 
   constructor(private $jsplumb: jsPlumbService) {
-    this.dialogs = newDialogInstance({
+    this.dialogs = new Dialogs({
       dialogs: {
         dlgText: {
-          template:'<input type="text" size="50" jtk-focus jtk-att="text" value="${text}" jtk-commit="true"/>',
-          title:'Enter Text',
-          cancelable:true
+          template: '<input type="text" size="50" jtk-focus jtk-att="text" value="{{text}}" jtk-commit="true"/>',
+          title: 'Enter Text',
+          cancelable: true
         },
         dlgConfirm: {
-          template:'${msg}',
-          title:'Please Confirm',
-          cancelable:true
+          template: '{{msg}}',
+          title: 'Please Confirm',
+          cancelable: true
         },
         dlgMessage: {
-          template:'${msg}',
-          title:'Message',
-          cancelable:false
+          template: '{{msg}}',
+          title: 'Message',
+          cancelable: false
         }
       }
     })

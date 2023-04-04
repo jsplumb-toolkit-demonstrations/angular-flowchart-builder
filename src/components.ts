@@ -1,4 +1,4 @@
-import {isNode} from '@jsplumbtoolkit/core'
+import {isNode} from '@jsplumbtoolkit/browser-ui'
 import {BaseNodeComponent} from '@jsplumbtoolkit/browser-ui-angular'
 import {Component} from '@angular/core'
 import {FlowchartService} from './app/flowchart.service'

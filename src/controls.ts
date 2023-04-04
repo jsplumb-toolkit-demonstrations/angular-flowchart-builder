@@ -1,6 +1,8 @@
 import {AfterViewInit, Component, ElementRef, Input} from '@angular/core'
 
 import {
+  EVENT_UNDOREDO_UPDATE,
+  UndoRedoUpdateParams,
   EVENT_CANVAS_CLICK,
   EVENT_SURFACE_MODE_CHANGED,
   Surface,
@@ -8,7 +10,6 @@ import {
   FALSE, TRUE
 } from '@jsplumbtoolkit/browser-ui'
 import {jsPlumbService} from '@jsplumbtoolkit/browser-ui-angular'
-import {EVENT_UNDOREDO_UPDATE, UndoRedoUpdateParams} from '@jsplumbtoolkit/core'
 
 // --------------------------------------- CONTROLS COMPONENT ------------------------------------------------------------------
 //

@@ -3,7 +3,7 @@ import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/
 import {FlowchartComponent } from './flowchart';
 
 import { BrowserUIAngular, jsPlumbService } from '@jsplumbtoolkit/browser-ui-angular'
-import { uuid } from '@jsplumbtoolkit/core'
+import { uuid } from '@jsplumbtoolkit/browser-ui'
 import {FlowchartService} from './app/flowchart.service'
 
 @Component({
